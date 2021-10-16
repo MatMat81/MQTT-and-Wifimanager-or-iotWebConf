@@ -5,7 +5,9 @@ V2021.10.16
 I had invested some time in this example because I couldn't find any suitable examples in netz.
 Now all makers should benefit from it ...
 
-testet whit esp8266 (Wemos D1 4MB)...
+testet whit ESP8266 on Platformio ...
+Espressif 8266 (3.2.0) > WeMos D1 R2 and mini
+
 
 Lib: 
 https://github.com/prampec/IotWebConf V3.0.2
