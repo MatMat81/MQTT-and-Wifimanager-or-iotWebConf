@@ -2,6 +2,8 @@
 An example to set MQTT-Port and MQTT-Feeds from Webportal 
 
 V2021.10.16
+I had invested some time in this example because I couldn't find any suitable examples in netz.
+Now all makers should benefit from it ...
 
 testet whit esp8266 (Wemos D1 4MB)...
 
@@ -14,3 +16,6 @@ https://github.com/bblanchon/ArduinoJson V6.18.3 (only for set tests over USB (J
 
 
 works whit "Adafruit IO"
+
+
+enjoy!!
