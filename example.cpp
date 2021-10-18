@@ -40,6 +40,7 @@ unsigned long previousMillis = 0;        // will store last time LED was updated
 const long interval = 5000;           // interval at which to blink (milliseconds)
 float fMessWertAktuell;
 bool firstRun = false;
+bool needReset = false;
 
 #define STRING_LEN 128
 #define NUMBER_LEN 32
@@ -138,6 +139,13 @@ void setup() {
 void loop() {
   iotWebConf.doLoop();
   unsigned long currentMillis = millis();
+ 
+  if (needReset)
+  {
+    Serial.println("Rebooting after 1 second.");
+    iotWebConf.delay(1000);
+    ESP.restart();
+  }
  
   if (iotWebConf.getState() == 4) {
     // online:
@@ -242,6 +250,7 @@ uint8_t CharToUint8(char Text){
 
 void configSaved() { 
   Serial.println("Configuration was updated.");
+  needReset = true;
 }
 
 bool formValidator(iotwebconf::WebRequestWrapper* webRequestWrapper) {
